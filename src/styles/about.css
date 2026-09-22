@@ -1834,6 +1834,374 @@
 }
 
 /* =========================================================
+   LAPTOP
+   1051–1536 px: mantiene la composición desktop de About,
+   pero reduce escalas y altura vertical para laptops.
+   ========================================================= */
+
+@media (min-width: 1051px) and (max-width: 1536px) {
+
+  .history-hero {
+    min-height: 720px;
+
+    background-position:
+      center center;
+  }
+
+  .history-hero-inner {
+    padding:
+      125px
+      0
+      95px;
+  }
+
+  .history-number {
+    margin-bottom: 23px;
+  }
+
+  .history-hero h1 {
+    max-width: 920px;
+
+    margin-top: 22px;
+
+    font-size:
+      clamp(
+        58px,
+        6.3vw,
+        88px
+      );
+  }
+
+  .hero-bottom {
+    max-width: 690px;
+
+    margin-top: 38px;
+  }
+
+  .hero-intro {
+    font-size:
+      clamp(
+        14px,
+        1.15vw,
+        17px
+      );
+  }
+
+  .hero-note {
+    max-width: 470px;
+
+    margin-top: 23px;
+    padding-top: 18px;
+  }
+
+  .history-hero .hero-air {
+    width: 1080px;
+  }
+
+  .hero-tech {
+    right: 28px;
+    bottom: 27px;
+  }
+
+  .origin {
+    padding:
+      115px
+      0;
+  }
+
+  .origin-grid {
+    grid-template-columns:
+      .48fr
+      1.52fr;
+
+    gap: 65px;
+  }
+
+  .origin-copy {
+    max-width: 850px;
+  }
+
+  .origin-copy h2 {
+    font-size:
+      clamp(
+        38px,
+        4.2vw,
+        59px
+      );
+  }
+
+  .origin-copy p {
+    max-width: 590px;
+
+    margin-top: 27px;
+
+    font-size: 12px;
+  }
+
+  .timeline {
+    padding:
+      115px
+      0;
+  }
+
+  .timeline-header {
+    gap: 50px;
+  }
+
+  .timeline-header h2 {
+    max-width: 710px;
+
+    margin-top: 18px;
+
+    font-size:
+      clamp(
+        41px,
+        4.45vw,
+        63px
+      );
+  }
+
+  .timeline-header p {
+    max-width: 470px;
+
+    font-size: 12px;
+  }
+
+  .timeline-list {
+    margin-top: 72px;
+  }
+
+  .timeline-list::before {
+    left: 145px;
+  }
+
+  .timeline-item {
+    min-height: 220px;
+
+    padding:
+      34px
+      0;
+
+    grid-template-columns:
+      145px
+      1fr
+      235px;
+
+    gap: 37px;
+  }
+
+  .timeline-dot {
+    left: 140px;
+    top: 40px;
+  }
+
+  .timeline-main {
+    padding-left: 18px;
+  }
+
+  .timeline-main h3 {
+    max-width: 570px;
+
+    font-size:
+      clamp(
+        27px,
+        2.5vw,
+        36px
+      );
+  }
+
+  .timeline-main p {
+    max-width: 540px;
+
+    margin-top: 14px;
+
+    font-size: 11px;
+  }
+
+  .timeline-side {
+    font-size: 9px;
+  }
+
+  .identity {
+    padding:
+      108px
+      0;
+  }
+
+  .identity-grid {
+    grid-template-columns:
+      .88fr
+      1.12fr;
+
+    gap: 68px;
+  }
+
+  .identity-mark {
+    min-height: 425px;
+
+    border-radius: 26px;
+  }
+
+  .identity-copy h2 {
+    max-width: 600px;
+
+    margin-top: 19px;
+
+    font-size:
+      clamp(
+        38px,
+        4vw,
+        55px
+      );
+  }
+
+  .identity-copy > p {
+    max-width: 540px;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+  }
+
+  .identity-points {
+    margin-top: 38px;
+
+    gap:
+      25px
+      31px;
+  }
+
+  .identity-point strong {
+    font-size: 16px;
+  }
+
+  .today-wrapper {
+    margin-top: -42px;
+    margin-bottom: -42px;
+  }
+
+  .today {
+    padding:
+      145px
+      0;
+  }
+
+  .today-grid {
+    grid-template-columns:
+      .48fr
+      1.52fr;
+
+    gap: 65px;
+  }
+
+  .today-copy h2 {
+    max-width: 790px;
+
+    font-size:
+      clamp(
+        39px,
+        4.35vw,
+        60px
+      );
+  }
+
+  .today-copy p {
+    max-width: 570px;
+
+    margin-top: 24px;
+
+    font-size: 12px;
+  }
+
+  .today-line {
+    margin-top: 50px;
+
+    padding-top: 22px;
+
+    gap: 23px;
+  }
+
+  .today-line strong {
+    font-size: 16px;
+  }
+
+  .today-air {
+    width: 720px;
+  }
+
+  .next {
+    padding:
+      125px
+      0
+      140px;
+  }
+
+  .next-card {
+    min-height: 455px;
+
+    padding:
+      70px
+      55px;
+
+    border-radius: 29px;
+  }
+
+  .next-card::before {
+    inset: 15px;
+
+    border-radius: 19px;
+  }
+
+  .next-content {
+    max-width: 880px;
+  }
+
+  .next-eyebrow {
+    margin-bottom: 24px;
+
+    font-size: 8px;
+  }
+
+  .typewriter-wrap {
+    min-height: 155px;
+  }
+
+  .typewriter {
+    max-width: 800px;
+
+    font-size:
+      clamp(
+        39px,
+        4.55vw,
+        62px
+      );
+  }
+
+  .next-copy {
+    max-width: 530px;
+
+    margin-top: 24px;
+
+    font-size: 11px;
+  }
+
+  .next-orbit {
+    width: 340px;
+    height: 340px;
+  }
+
+  .next-air {
+    width: 1300px;
+  }
+
+  .next-air-fine {
+    width: 1350px;
+  }
+
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
