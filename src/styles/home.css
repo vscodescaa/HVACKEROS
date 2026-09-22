@@ -2995,7 +2995,7 @@
       rgba(6,27,39,.42),
       rgba(6,27,39,.08)
     ),
-    url("/src/assets/img/historia-banner.png")
+    url("https://images.unsplash.com/photo-1527738697320-513f6648bc26?auto=format&fit=crop&w=1800&q=78")
     center 46% / cover
     no-repeat;
 
@@ -3045,8 +3045,8 @@
       rgba(8,56,74,.58),
       rgba(5,20,29,.2)
     ),
-    url("/src/assets/img/historia-banner.png")
-    74% 50% / cover
+    url("https://images.unsplash.com/photo-1774290331891-5d759056c68d?auto=format&fit=crop&w=1400&q=78")
+    center 50% / cover
     no-repeat;
 }
 
@@ -3062,8 +3062,8 @@
       rgba(21,155,154,.4),
       rgba(7,31,42,.15)
     ),
-    url("/src/assets/img/group.jpg")
-    center 42% / cover
+    url("https://images.unsplash.com/photo-1774600787310-6f9559d9bdac?auto=format&fit=crop&w=1400&q=78")
+    center 52% / cover
     no-repeat;
 }
 
@@ -3148,12 +3148,12 @@
 
   .purpose-card.dark {
     background-position:
-      69% center;
+      center center;
   }
 
   .purpose-card.teal {
     background-position:
-      center 34%;
+      center 52%;
   }
 
 }
