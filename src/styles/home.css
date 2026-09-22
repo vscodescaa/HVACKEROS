@@ -2820,3 +2820,359 @@
     transform: none;
   }
 }
+
+
+/* =========================================================
+   HOME REFRESH — 2026-09
+   Manifesto treatment + photographic purpose cards.
+   ========================================================= */
+
+.manifesto-statement {
+  position: relative;
+
+  padding:
+    34px
+    36px
+    30px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255,255,255,.105);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.018)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 28px 70px rgba(0,0,0,.09);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.manifesto-statement::before {
+  content: "";
+
+  position: absolute;
+  pointer-events: none;
+
+  width: 360px;
+  height: 360px;
+
+  right: -180px;
+  top: -215px;
+
+  border:
+    1px solid rgba(95,201,195,.11);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 54px rgba(95,201,195,.027),
+    0 0 0 108px rgba(95,201,195,.014);
+}
+
+.manifesto-statement::after {
+  content: "";
+
+  position: absolute;
+  pointer-events: none;
+
+  inset: 0;
+
+  opacity: .18;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    42px 42px;
+}
+
+.manifesto-statement-meta,
+.manifesto-statement-foot,
+.manifesto-statement .manifesto-big {
+  position: relative;
+  z-index: 2;
+}
+
+.manifesto-statement-meta {
+  margin-bottom: 33px;
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  color:
+    rgba(255,255,255,.37);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+}
+
+.manifesto-statement .manifesto-big {
+  max-width: 880px;
+}
+
+.manifesto-statement-foot {
+  margin-top: 31px;
+  padding-top: 19px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  border-top:
+    1px solid rgba(255,255,255,.085);
+}
+
+.manifesto-statement-foot > span {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: #5fc9c3;
+
+  box-shadow:
+    0 0 18px rgba(95,201,195,.5);
+}
+
+.manifesto-statement-foot small {
+  color:
+    rgba(255,255,255,.4);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
+}
+
+/* Purpose cards now use photography as part of the composition.
+   Existing project assets keep the page self-contained and avoid
+   fragile third-party hotlinks. */
+
+.purpose-main {
+  color: white;
+
+  border-color:
+    rgba(255,255,255,.13);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,19,29,.19) 0%,
+      rgba(5,19,29,.37) 42%,
+      rgba(5,19,29,.91) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(6,27,39,.42),
+      rgba(6,27,39,.08)
+    ),
+    url("/src/assets/img/historia-banner.png")
+    center 46% / cover
+    no-repeat;
+
+  box-shadow:
+    0 28px 70px
+    rgba(8,28,39,.11);
+}
+
+.purpose-main::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(95,201,195,.17),
+      transparent 69%
+    );
+}
+
+.purpose-main-top {
+  color:
+    rgba(255,255,255,.62);
+}
+
+.purpose-main h3 {
+  max-width: 720px;
+
+  text-shadow:
+    0 2px 30px
+    rgba(0,0,0,.16);
+}
+
+.purpose-main p {
+  max-width: 610px;
+
+  color:
+    rgba(255,255,255,.67);
+}
+
+.purpose-card.dark {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4,19,29,.22),
+      rgba(4,19,29,.84)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(8,56,74,.58),
+      rgba(5,20,29,.2)
+    ),
+    url("/src/assets/img/historia-banner.png")
+    74% 50% / cover
+    no-repeat;
+}
+
+.purpose-card.teal {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,32,39,.16),
+      rgba(5,32,39,.82)
+    ),
+    linear-gradient(
+      125deg,
+      rgba(21,155,154,.4),
+      rgba(7,31,42,.15)
+    ),
+    url("/src/assets/img/group.jpg")
+    center 42% / cover
+    no-repeat;
+}
+
+.purpose-card.dark,
+.purpose-card.teal {
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.045),
+    0 22px 55px rgba(7,25,35,.11);
+}
+
+.purpose-card.dark::after,
+.purpose-card.teal::after {
+  content: "";
+
+  position: absolute;
+  pointer-events: none;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.035),
+      transparent 38%
+    );
+}
+
+.purpose-card svg,
+.purpose-card > div {
+  position: relative;
+  z-index: 3;
+}
+
+.purpose-card svg {
+  padding: 8px;
+
+  width: 48px;
+  height: 48px;
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
+  border-radius: 14px;
+
+  background:
+    rgba(4,18,27,.22);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (max-width: 760px) {
+
+  .manifesto-statement {
+    padding:
+      27px
+      24px
+      25px;
+
+    border-radius: 23px;
+  }
+
+  .manifesto-statement-meta {
+    margin-bottom: 25px;
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .manifesto-statement-foot {
+    margin-top: 24px;
+  }
+
+  .purpose-main {
+    background-position:
+      center center;
+  }
+
+  .purpose-card.dark {
+    background-position:
+      69% center;
+  }
+
+  .purpose-card.teal {
+    background-position:
+      center 34%;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .manifesto-statement {
+    padding:
+      24px
+      20px
+      22px;
+  }
+
+  .manifesto-statement-meta {
+    font-size: 7px;
+  }
+
+  .manifesto-statement-foot small {
+    font-size: 7px;
+  }
+
+}
