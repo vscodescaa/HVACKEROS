@@ -1,0 +1,1845 @@
+/* =========================================================
+   HVACKEROS — MEMBERS (Equipo)
+   CSS específico de la página de equipo: hero con foto
+   grupal responsive, tarjetas de liderazgo, filas
+   secundarias y CTA final.
+   ========================================================= */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.team-hero {
+  position: relative;
+
+  min-height: 860px;
+
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    #061721;
+}
+
+/* =========================================================
+   HERO IMAGE RESPONSIVE
+   ========================================================= */
+
+.hero-picture {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position:
+    50% 43%;
+
+  transform:
+    scale(1.015);
+}
+
+/* =========================================================
+   PHOTO OVERLAY
+   ========================================================= */
+
+.hero-photo-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(2,9,14,.74) 0%,
+      rgba(2,9,14,.48) 30%,
+      rgba(2,9,14,.16) 55%,
+      rgba(2,9,14,.31) 76%,
+      rgba(2,9,14,.42) 100%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(2,8,13,.47) 0%,
+      rgba(2,8,13,.27) 34%,
+      rgba(2,8,13,.11) 60%,
+      rgba(2,8,13,.38) 100%
+    );
+
+  pointer-events:
+    none;
+}
+
+.hero-vignette {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  box-shadow:
+    inset 0 0 180px
+    rgba(1,7,11,.34);
+
+  pointer-events:
+    none;
+}
+
+/* =========================================================
+   HERO DECORATION
+   ========================================================= */
+
+.hero-circle {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 430px;
+  height: 430px;
+
+  right: -150px;
+  top: -170px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.055);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+
+    0 0 0 65px
+    rgba(255,255,255,.011),
+
+    0 0 0 130px
+    rgba(255,255,255,.006);
+
+  pointer-events:
+    none;
+}
+
+.team-hero .hero-air {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 720px;
+
+  right: -130px;
+  bottom: 95px;
+
+  opacity: .10;
+
+  pointer-events:
+    none;
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-inner {
+  position: relative;
+
+  z-index: 4;
+
+  width: 100%;
+
+  min-height: 860px;
+
+  padding:
+    145px
+    0
+    330px;
+}
+
+.hero-layout {
+  display: grid;
+
+  grid-template-columns:
+
+    minmax(0,1.3fr)
+
+    minmax(330px,.7fr);
+
+  align-items:
+    start;
+
+  gap:
+    105px;
+}
+
+.hero-title-area {
+  max-width:
+    860px;
+}
+
+.hero-index {
+  margin-bottom:
+    25px;
+
+  color:
+    rgba(255,255,255,.44);
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .18em;
+}
+
+.team-hero
+.micro-label {
+  color:
+    #8be5df;
+}
+
+.team-hero h1 {
+  max-width:
+    850px;
+
+  margin-top:
+    23px;
+
+  font-size:
+    clamp(
+      60px,
+      5.5vw,
+      86px
+    );
+
+  font-weight:
+    500;
+
+  line-height:
+    .96;
+
+  letter-spacing:
+    -.055em;
+
+  text-shadow:
+    0 2px 30px
+    rgba(0,0,0,.20);
+}
+
+.team-hero h1 span {
+  display:
+    block;
+
+  color:
+    rgba(255,255,255,.60);
+}
+
+/* =========================================================
+   HERO RIGHT CONTENT
+   ========================================================= */
+
+.hero-side {
+  position: relative;
+
+  max-width:
+    455px;
+
+  margin-top:
+    65px;
+
+  padding:
+    27px
+    29px
+    25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  border-radius:
+    20px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(3,14,21,.42),
+      rgba(3,14,21,.20)
+    );
+
+  backdrop-filter:
+    blur(7px);
+
+  -webkit-backdrop-filter:
+    blur(7px);
+
+  box-shadow:
+    0 18px 60px
+    rgba(0,0,0,.08);
+}
+
+.hero-side::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 27px;
+
+  width: 2px;
+  height: 37px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--teal),
+      rgba(21,155,154,0)
+    );
+}
+
+.hero-side p {
+  color:
+    rgba(255,255,255,.88);
+
+  font-size:
+    15px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.78;
+
+  letter-spacing:
+    -.008em;
+
+  text-shadow:
+    0 1px 13px
+    rgba(0,0,0,.25);
+}
+
+.hero-meta {
+  margin-top:
+    30px;
+
+  padding-top:
+    20px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:
+    25px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.17);
+}
+
+.hero-meta small {
+  display:
+    block;
+
+  color:
+    rgba(255,255,255,.47);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .15em;
+
+  text-transform:
+    uppercase;
+}
+
+.hero-meta strong {
+  display:
+    block;
+
+  margin-top:
+    8px;
+
+  font-family:
+    "Open Sans",
+    sans-serif;
+
+  color:
+    rgba(255,255,255,.97);
+
+  font-size:
+    13px;
+
+  font-weight:
+    600;
+}
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+
+.team {
+  position: relative;
+
+  padding:
+    135px
+    0
+    145px;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 91% 8%,
+      rgba(21,155,154,.105),
+      transparent 27%
+    ),
+
+    radial-gradient(
+      circle at 4% 88%,
+      rgba(18,63,106,.06),
+      transparent 27%
+    ),
+
+    linear-gradient(
+      145deg,
+      #f3f2ed,
+      #edf0eb
+    );
+}
+
+.team::before {
+  content: "";
+
+  position: absolute;
+
+  right: -180px;
+  bottom: 60px;
+
+  width: 430px;
+  height: 430px;
+
+  border:
+    1px solid
+    rgba(21,155,154,.09);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+
+    0 0 0 60px
+    rgba(21,155,154,.025),
+
+    0 0 0 120px
+    rgba(21,155,154,.012);
+}
+
+.team-dots {
+  position: absolute;
+
+  left: -100px;
+  top: 140px;
+
+  width: 420px;
+  height: 420px;
+
+  opacity: .16;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(18,63,106,.35) 1px,
+      transparent 1.25px
+    );
+
+  background-size:
+    20px 20px;
+
+  mask-image:
+    radial-gradient(
+      circle,
+      black,
+      transparent 70%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle,
+      black,
+      transparent 70%
+    );
+}
+
+/* =========================================================
+   TEAM HEADER
+   ========================================================= */
+
+.team-header {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    .72fr;
+
+  align-items:
+    end;
+
+  gap:
+    80px;
+}
+
+.team-header h2 {
+  max-width:
+    770px;
+
+  margin-top:
+    21px;
+
+  font-size:
+    clamp(
+      48px,
+      5.4vw,
+      78px
+    );
+
+  font-weight:
+    500;
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -.05em;
+}
+
+.team-header p {
+  max-width:
+    500px;
+
+  justify-self:
+    end;
+
+  color:
+    var(--ink-soft);
+
+  font-size:
+    14px;
+
+  line-height:
+    1.8;
+}
+
+/* =========================================================
+   LEADERSHIP
+   ========================================================= */
+
+.leadership-grid {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top:
+    78px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    18px;
+}
+
+.member-card {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    27px;
+
+  background:
+    rgba(248,248,244,.78);
+
+  transition:
+    transform .42s var(--ease),
+    box-shadow .42s var(--ease),
+    border-color .42s ease;
+}
+
+.member-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(21,155,154,.23);
+
+  box-shadow:
+    0 30px 70px
+    rgba(7,25,35,.09);
+}
+
+.member-media {
+  position: relative;
+
+  height:
+    410px;
+
+  overflow:
+    hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 65% 20%,
+      rgba(21,155,154,.17),
+      transparent 27%
+    ),
+
+    linear-gradient(
+      145deg,
+      #0a2634,
+      #061721
+    );
+}
+
+.member-media::before {
+  content: "";
+
+  position:
+    absolute;
+
+  width:
+    250px;
+
+  height:
+    250px;
+
+  right:
+    -85px;
+
+  top:
+    -85px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.075);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+
+    0 0 0 42px
+    rgba(255,255,255,.018),
+
+    0 0 0 84px
+    rgba(255,255,255,.009);
+}
+
+.member-media::after {
+  content: "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    2;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5,18,26,.40),
+      transparent 45%
+    );
+
+  pointer-events:
+    none;
+}
+
+.member-media img {
+  position:
+    absolute;
+
+  z-index:
+    1;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  filter:
+    saturate(.85)
+    contrast(1.03);
+
+  transition:
+    transform .65s var(--ease),
+    filter .45s ease;
+}
+
+.member-card:hover
+.member-media img {
+  transform:
+    scale(1.035);
+
+  filter:
+    saturate(.95)
+    contrast(1.04);
+}
+
+.member-placeholder {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  color:
+    rgba(255,255,255,.11);
+
+  font-family:
+    "Open Sans",
+    sans-serif;
+
+  font-size:
+    100px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    -.08em;
+}
+
+.member-placeholder::before {
+  content: "";
+
+  position:
+    absolute;
+
+  width:
+    140px;
+
+  height:
+    140px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.07);
+
+  border-radius:
+    50%;
+}
+
+.member-number {
+  position:
+    absolute;
+
+  z-index:
+    4;
+
+  left:
+    24px;
+
+  top:
+    23px;
+
+  color:
+    rgba(255,255,255,.40);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .17em;
+}
+
+.member-status {
+  position:
+    absolute;
+
+  z-index:
+    4;
+
+  right:
+    23px;
+
+  top:
+    22px;
+
+  width:
+    7px;
+
+  height:
+    7px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--teal);
+
+  box-shadow:
+    0 0 16px
+    rgba(21,155,154,.65);
+}
+
+.member-info {
+  min-height:
+    168px;
+
+  padding:
+    27px
+    27px
+    25px;
+}
+
+.member-role {
+  color:
+    var(--teal);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .16em;
+
+  text-transform:
+    uppercase;
+}
+
+.member-info h3 {
+  margin-top:
+    10px;
+
+  font-size:
+    clamp(
+      24px,
+      2vw,
+      31px
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    1.05;
+
+  letter-spacing:
+    -.04em;
+}
+
+.member-info p {
+  max-width:
+    350px;
+
+  margin-top:
+    13px;
+
+  color:
+    var(--ink-muted);
+
+  font-size:
+    11px;
+
+  line-height:
+    1.7;
+}
+
+/* =========================================================
+   SECONDARY MEMBERS
+   ========================================================= */
+
+.members-secondary {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  margin-top:
+    70px;
+
+  padding-top:
+    34px;
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.secondary-top {
+  margin-bottom:
+    27px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    30px;
+}
+
+.secondary-top h3 {
+  font-size:
+    25px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    -.035em;
+}
+
+.secondary-top span {
+  color:
+    var(--ink-muted);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .15em;
+
+  text-transform:
+    uppercase;
+}
+
+.secondary-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    0 34px;
+}
+
+.member-row {
+  min-height:
+    105px;
+
+  padding:
+    22px 0;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    54px
+    1fr;
+
+  align-items:
+    center;
+
+  gap:
+    17px;
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  transition:
+    padding .3s var(--ease);
+}
+
+.member-row:hover {
+  padding-left:
+    7px;
+}
+
+.member-avatar {
+  position:
+    relative;
+
+  width:
+    54px;
+
+  height:
+    54px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a3446,
+      #061721
+    );
+}
+
+.member-avatar img {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+}
+
+.member-avatar span {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  color:
+    rgba(255,255,255,.48);
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+}
+
+.member-row-info strong {
+  display:
+    block;
+
+  font-family:
+    "Open Sans",
+    sans-serif;
+
+  font-size:
+    14px;
+
+  font-weight:
+    600;
+}
+
+.member-row-info small {
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  color:
+    var(--ink-muted);
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .08em;
+
+  text-transform:
+    uppercase;
+}
+
+/* =========================================================
+   JOIN
+   ========================================================= */
+
+.join {
+  position:
+    relative;
+
+  padding:
+    110px
+    0;
+
+  overflow:
+    hidden;
+
+  color:
+    white;
+
+  background:
+
+    radial-gradient(
+      circle at 86% 17%,
+      rgba(21,155,154,.17),
+      transparent 27%
+    ),
+
+    radial-gradient(
+      circle at 8% 90%,
+      rgba(74,170,72,.055),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      135deg,
+      #061721,
+      #0a2b39
+    );
+}
+
+.join::before {
+  content: "";
+
+  position:
+    absolute;
+
+  left:
+    -120px;
+
+  top:
+    -170px;
+
+  width:
+    380px;
+
+  height:
+    380px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.04);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+
+    0 0 0 60px
+    rgba(255,255,255,.01),
+
+    0 0 0 120px
+    rgba(255,255,255,.006);
+}
+
+.join-air {
+  position:
+    absolute;
+
+  width:
+    660px;
+
+  right:
+    -100px;
+
+  bottom:
+    -90px;
+
+  opacity:
+    .11;
+}
+
+.join-layout {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  align-items:
+    center;
+
+  gap:
+    80px;
+}
+
+.join
+.micro-label {
+  color:
+    #83d9d4;
+}
+
+.join h2 {
+  max-width:
+    850px;
+
+  margin-top:
+    19px;
+
+  font-size:
+    clamp(
+      44px,
+      5vw,
+      70px
+    );
+
+  font-weight:
+    400;
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -.048em;
+}
+
+.join h2 span {
+  color:
+    rgba(255,255,255,.36);
+}
+
+.join-circle {
+  width:
+    150px;
+
+  height:
+    150px;
+
+  flex-shrink:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    13px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.20);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.025);
+
+  color:
+    white;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .15em;
+
+  transition:
+    transform .4s var(--ease),
+    background .35s ease;
+}
+
+.join-circle:hover {
+  transform:
+    rotate(-7deg)
+    scale(1.04);
+
+  background:
+    rgba(255,255,255,.06);
+}
+
+.join-circle svg {
+  width:
+    22px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1500px) {
+
+  .team-hero {
+    min-height:
+      900px;
+  }
+
+  .hero-inner {
+    min-height:
+      900px;
+
+    padding-bottom:
+      360px;
+  }
+
+  .hero-photo {
+    object-position:
+      50% 42%;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .team-hero {
+    min-height:
+      800px;
+  }
+
+  .hero-inner {
+    min-height:
+      800px;
+
+    padding:
+      125px
+      0
+      285px;
+  }
+
+  .hero-layout {
+    grid-template-columns:
+      1fr
+      .62fr;
+
+    gap:
+      55px;
+  }
+
+  .team-hero h1 {
+    font-size:
+      clamp(
+        55px,
+        7vw,
+        74px
+      );
+  }
+
+  .hero-side {
+    margin-top:
+      48px;
+  }
+
+  .hero-photo {
+    object-position:
+      50% 45%;
+  }
+
+  .leadership-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .member-card:last-child {
+    grid-column:
+      1 / -1;
+
+    display:
+      grid;
+
+    grid-template-columns:
+      .82fr
+      1.18fr;
+  }
+
+  .member-card:last-child
+  .member-media {
+    height:
+      360px;
+  }
+
+  .secondary-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE IMAGE SWITCH
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .team-hero {
+    min-height:
+      940px;
+  }
+
+  /*
+    Ya estamos usando group-responsive.jpeg
+    gracias al <picture>.
+
+    La imagen vertical puede ocupar casi
+    toda la primera mitad del banner.
+  */
+
+  .hero-picture {
+    height:
+      69%;
+  }
+
+  .hero-photo {
+    width:
+      100%;
+
+    height:
+      100%;
+
+    object-fit:
+      cover;
+
+    object-position:
+      50% 38%;
+
+    transform:
+      none;
+  }
+
+  /*
+    Gradiente pensado para convertir
+    suavemente la foto vertical en
+    el fondo oscuro inferior.
+  */
+
+  .hero-photo-overlay {
+    background:
+
+      linear-gradient(
+        to bottom,
+        rgba(3,10,16,.10) 0%,
+        rgba(3,10,16,.07) 35%,
+        rgba(3,10,16,.18) 52%,
+        rgba(3,10,16,.67) 72%,
+        #061721 94%,
+        #061721 100%
+      );
+  }
+
+  .hero-vignette {
+    box-shadow:
+      inset 0 0 100px
+      rgba(1,7,11,.22);
+  }
+
+  .hero-inner {
+    min-height:
+      940px;
+
+    padding:
+      545px
+      0
+      65px;
+
+    display:
+      flex;
+
+    align-items:
+      flex-end;
+  }
+
+  .hero-layout {
+    width:
+      100%;
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      33px;
+  }
+
+  .hero-title-area {
+    max-width:
+      100%;
+  }
+
+  .hero-index {
+    margin-bottom:
+      17px;
+  }
+
+  .team-hero h1 {
+    max-width:
+      620px;
+
+    margin-top:
+      18px;
+
+    font-size:
+      clamp(
+        47px,
+        13vw,
+        67px
+      );
+  }
+
+  /*
+    En móvil quitamos la tarjeta
+    porque ya estamos completamente
+    sobre el fondo oscuro.
+  */
+
+  .hero-side {
+    max-width:
+      540px;
+
+    margin-top:
+      0;
+
+    padding:
+      0;
+
+    border:
+      0;
+
+    border-radius:
+      0;
+
+    background:
+      none;
+
+    backdrop-filter:
+      none;
+
+    -webkit-backdrop-filter:
+      none;
+
+    box-shadow:
+      none;
+  }
+
+  .hero-side::before {
+    display:
+      none;
+  }
+
+  .hero-side p {
+    max-width:
+      480px;
+
+    font-size:
+      14px;
+
+    font-weight:
+      600;
+
+    color:
+      rgba(255,255,255,.86);
+  }
+
+  .hero-meta {
+    max-width:
+      420px;
+  }
+
+  .hero-circle,
+  .team-hero .hero-air {
+    display:
+      none;
+  }
+
+  .team {
+    padding:
+      95px
+      0
+      100px;
+  }
+
+  .team-header {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      28px;
+  }
+
+  .team-header p {
+    justify-self:
+      start;
+  }
+
+  .team-header h2 {
+    font-size:
+      clamp(
+        41px,
+        11vw,
+        58px
+      );
+  }
+
+  .leadership-grid {
+    margin-top:
+      55px;
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .member-card:last-child {
+    grid-column:
+      auto;
+
+    display:
+      block;
+  }
+
+  .member-media,
+  .member-card:last-child
+  .member-media {
+    height:
+      420px;
+  }
+
+  .secondary-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .members-secondary {
+    margin-top:
+      60px;
+  }
+
+  .secondary-top {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      7px;
+  }
+
+  .join {
+    padding:
+      90px
+      0;
+  }
+
+  .join-layout {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      45px;
+  }
+
+  .join h2 {
+    font-size:
+      clamp(
+        41px,
+        11vw,
+        58px
+      );
+  }
+
+  .join-circle {
+    width:
+      132px;
+
+    height:
+      132px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .team-hero {
+    min-height:
+      900px;
+  }
+
+  .hero-picture {
+    height:
+      65%;
+  }
+
+  .hero-photo {
+    object-position:
+      50% 35%;
+  }
+
+  .hero-inner {
+    min-height:
+      900px;
+
+    padding:
+      500px
+      0
+      52px;
+  }
+
+  .team-hero h1 {
+    font-size:
+      clamp(
+        43px,
+        13vw,
+        56px
+      );
+
+    line-height:
+      .98;
+  }
+
+  .hero-side p {
+    font-size:
+      13px;
+  }
+
+  .hero-meta {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .team {
+    padding:
+      78px
+      0
+      82px;
+  }
+
+  .member-card {
+    border-radius:
+      22px;
+  }
+
+  .member-media,
+  .member-card:last-child
+  .member-media {
+    height:
+      360px;
+  }
+
+  .member-info {
+    min-height:
+      0;
+
+    padding:
+      23px
+      22px
+      24px;
+  }
+
+  .member-info h3 {
+    font-size:
+      26px;
+  }
+
+  .join {
+    padding:
+      75px
+      0;
+  }
+
+  .join-circle {
+    width:
+      120px;
+
+    height:
+      120px;
+  }
+}
+
+/* =========================================================
+   TOUCH
+   ========================================================= */
+
+@media (hover: none) {
+
+  .member-card:hover,
+  .join-circle:hover {
+    transform:
+      none;
+  }
+
+  .member-card:hover
+  .member-media img {
+    transform:
+      none;
+  }
+}
