@@ -3,7 +3,7 @@
    ========================================================= */
 
 const sentence =
-  "Nuestra historia todavía se está escribiendo.";
+  "Nuestra historia aún se escribe.";
 
 const typedText =
   document.getElementById(
