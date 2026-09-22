@@ -3433,16 +3433,16 @@
   background:
     linear-gradient(
       180deg,
-      rgba(5,32,39,.16),
-      rgba(5,32,39,.82)
+      rgba(5,32,39,.24),
+      rgba(5,32,39,.84)
     ),
     linear-gradient(
       125deg,
-      rgba(21,155,154,.4),
-      rgba(7,31,42,.15)
+      rgba(21,155,154,.34),
+      rgba(7,31,42,.12)
     ),
-    url("https://images.unsplash.com/photo-1774600787310-6f9559d9bdac?auto=format&fit=crop&w=1400&q=78")
-    center 52% / cover
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=78")
+    center 42% / cover
     no-repeat;
 }
 
@@ -3532,7 +3532,7 @@
 
   .purpose-card.teal {
     background-position:
-      center 52%;
+      center 40%;
   }
 
 }
