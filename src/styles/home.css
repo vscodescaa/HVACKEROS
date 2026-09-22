@@ -1809,6 +1809,385 @@
 }
 
 /* =========================================================
+   LAPTOP
+   1121–1536 px: conserva la composición desktop, pero reduce
+   escala vertical, tipografía y altura de tarjetas para evitar
+   que la landing se sienta sobredimensionada en pantallas
+   de laptop de 13–16 pulgadas.
+   ========================================================= */
+
+@media (min-width: 1121px) and (max-width: 1536px) {
+
+  .hero {
+    min-height: 760px;
+
+    padding:
+      135px
+      0
+      82px;
+  }
+
+  .hero-layout {
+    gap: 42px;
+  }
+
+  .hero h1 {
+    max-width: 760px;
+
+    font-size:
+      clamp(
+        56px,
+        5.45vw,
+        78px
+      );
+  }
+
+  .hero-description {
+    max-width: 570px;
+
+    margin-top: 25px;
+
+    font-size:
+      clamp(
+        14px,
+        1.05vw,
+        16px
+      );
+  }
+
+  .hero-actions {
+    margin-top: 31px;
+  }
+
+  .button {
+    min-height: 49px;
+
+    padding:
+      0
+      20px;
+
+    font-size: 10px;
+  }
+
+  .visual-shell {
+    min-height: 470px;
+  }
+
+  .hero-air {
+    width: 930px;
+    height: 590px;
+
+    right: -230px;
+    top: 25px;
+  }
+
+  .hero-streams {
+    width: 650px;
+    height: 285px;
+
+    left: -180px;
+  }
+
+  .hero-vortex {
+    width: 270px;
+  }
+
+  .manifesto {
+    padding:
+      108px
+      0;
+  }
+
+  .manifesto-layout {
+    grid-template-columns:
+      .56fr
+      1.44fr;
+
+    gap: 55px;
+  }
+
+  .manifesto-isotype {
+    width: 61px;
+
+    margin-bottom: 18px;
+  }
+
+  .manifesto-statement {
+    padding:
+      27px
+      30px
+      25px;
+  }
+
+  .manifesto-statement-meta {
+    margin-bottom: 25px;
+  }
+
+  .manifesto-big {
+    max-width: 800px;
+
+    font-size:
+      clamp(
+        36px,
+        3.85vw,
+        55px
+      );
+  }
+
+  .manifesto-statement-foot {
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+
+  .manifesto-grid {
+    margin-top: 62px;
+
+    padding-top: 27px;
+
+    gap: 28px;
+  }
+
+  .manifesto-item {
+    min-height: 205px;
+  }
+
+  .manifesto-icon-large svg {
+    width: 68px;
+    height: 68px;
+  }
+
+  .manifesto-item h3 {
+    font-size: 19px;
+  }
+
+  .manifesto-item p {
+    font-size: 11px;
+  }
+
+  .purpose {
+    padding:
+      112px
+      0;
+  }
+
+  .purpose-header {
+    gap: 52px;
+  }
+
+  .purpose .section-title {
+    max-width: 760px;
+
+    font-size:
+      clamp(
+        40px,
+        4.15vw,
+        60px
+      );
+  }
+
+  .purpose .section-copy {
+    max-width: 530px;
+
+    font-size: 13px;
+  }
+
+  .purpose-layout {
+    margin-top: 58px;
+
+    gap: 15px;
+  }
+
+  .purpose-main {
+    min-height: 485px;
+
+    padding: 38px;
+
+    border-radius: 26px;
+  }
+
+  .purpose-main h3 {
+    max-width: 610px;
+
+    font-size:
+      clamp(
+        35px,
+        3.55vw,
+        51px
+      );
+  }
+
+  .purpose-main p {
+    max-width: 520px;
+
+    margin-top: 17px;
+
+    font-size: 12px;
+  }
+
+  .purpose-card {
+    min-height: 235px;
+
+    padding: 26px;
+
+    border-radius: 21px;
+  }
+
+  .purpose-card svg {
+    width: 43px;
+    height: 43px;
+  }
+
+  .purpose-card h3 {
+    max-width: 330px;
+
+    margin-top: 12px;
+
+    font-size: 23px;
+  }
+
+  .event-section {
+    padding:
+      108px
+      0;
+  }
+
+  .event-card {
+    min-height: 465px;
+
+    padding: 27px;
+
+    border-radius: 28px;
+  }
+
+  .event-topbar {
+    min-height: 51px;
+  }
+
+  .event-main {
+    gap: 55px;
+  }
+
+  .event-copy h2 {
+    font-size:
+      clamp(
+        40px,
+        4.15vw,
+        59px
+      );
+  }
+
+  .event-copy p {
+    max-width: 500px;
+
+    font-size: 12px;
+  }
+
+  .event-panel {
+    padding: 28px;
+
+    border-radius: 20px;
+  }
+
+  .event-panel h3 {
+    font-size: 24px;
+  }
+
+  .explore {
+    padding:
+      112px
+      0;
+  }
+
+  .explore .section-title {
+    max-width: 740px;
+
+    font-size:
+      clamp(
+        40px,
+        4.1vw,
+        59px
+      );
+  }
+
+  .explore-grid {
+    margin-top: 56px;
+
+    gap: 14px;
+  }
+
+  .explore-card {
+    min-height: 295px;
+
+    padding: 27px;
+
+    border-radius: 21px;
+  }
+
+  .explore-card h3 {
+    font-size:
+      clamp(
+        27px,
+        2.45vw,
+        35px
+      );
+  }
+
+  .explore-symbol {
+    width: 46px;
+    height: 46px;
+  }
+
+  .explore-arrow {
+    width: 39px;
+    height: 39px;
+  }
+
+  .join {
+    padding:
+      98px
+      0;
+  }
+
+  .join-layout {
+    gap: 55px;
+  }
+
+  .join h2 {
+    max-width: 800px;
+
+    margin-top: 19px;
+
+    font-size:
+      clamp(
+        42px,
+        4.55vw,
+        64px
+      );
+  }
+
+  .join p {
+    max-width: 500px;
+
+    margin-top: 21px;
+
+    font-size: 12px;
+  }
+
+  .join-circle {
+    width: 138px;
+    height: 138px;
+
+    font-size: 9px;
+  }
+
+  .join-circle svg {
+    width: 20px;
+  }
+
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
