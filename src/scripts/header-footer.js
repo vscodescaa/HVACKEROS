@@ -153,3 +153,121 @@ window.addEventListener(
 );
 
 updateHeaderState();
+
+
+/* =========================================================
+   CONTACT MODAL
+   ========================================================= */
+
+const contactModal =
+  document.getElementById(
+    "contactModal"
+  );
+
+const contactOpeners =
+  document.querySelectorAll(
+    "[data-contact-open]"
+  );
+
+const contactClosers =
+  contactModal
+    ?.querySelectorAll(
+      "[data-contact-close]"
+    ) ?? [];
+
+let contactTrigger = null;
+
+function setContactModal(open) {
+
+  if (!contactModal) {
+    return;
+  }
+
+  contactModal.classList.toggle(
+    "open",
+    open
+  );
+
+  contactModal.setAttribute(
+    "aria-hidden",
+    String(!open)
+  );
+
+  if (open) {
+
+    if (menuOpen) {
+      setMenu(false);
+    }
+
+    document.body.style.overflow =
+      "hidden";
+
+    contactModal
+      .querySelector(
+        ".contact-close"
+      )
+      ?.focus();
+
+  } else {
+
+    document.body.style.overflow =
+      "";
+
+    contactTrigger?.focus();
+
+    contactTrigger = null;
+
+  }
+
+}
+
+contactOpeners.forEach(
+  (button) => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        contactTrigger =
+          button;
+
+        setContactModal(true);
+
+      }
+    );
+
+  }
+);
+
+contactClosers.forEach(
+  (button) => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        setContactModal(false);
+
+      }
+    );
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key === "Escape" &&
+      contactModal?.classList.contains(
+        "open"
+      )
+    ) {
+
+      setContactModal(false);
+
+    }
+
+  }
+);
