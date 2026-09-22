@@ -566,8 +566,7 @@
 
   grid-template-columns:
     185px
-    1fr
-    300px;
+    1fr;
 
   align-items: start;
 
@@ -653,16 +652,6 @@
   font-size: 13px;
 
   line-height: 1.75;
-}
-
-.timeline-side {
-  padding-top: 4px;
-
-  color: var(--ink-muted);
-
-  font-size: 10px;
-
-  line-height: 1.7;
 }
 
 /* =========================================================
@@ -1200,9 +1189,9 @@
   z-index: 1;
 
   padding:
-    170px
+    125px
     0
-    190px;
+    140px;
 
   overflow: hidden;
 
@@ -1483,11 +1472,11 @@
   position: relative;
   z-index: 3;
 
-  min-height: 570px;
+  min-height: 410px;
 
   padding:
-    95px
-    70px;
+    58px
+    52px;
 
   display: flex;
   align-items: center;
@@ -1709,7 +1698,7 @@
 
   gap: 12px;
 
-  margin-bottom: 32px;
+  margin-bottom: 23px;
 
   color:
     rgba(255,255,255,.46);
@@ -1734,7 +1723,7 @@
 }
 
 .typewriter-wrap {
-  min-height: 210px;
+  min-height: 120px;
 
   display: flex;
   align-items: center;
@@ -1750,9 +1739,9 @@
 
   font-size:
     clamp(
-      44px,
-      5.5vw,
-      79px
+      38px,
+      4.35vw,
+      60px
     );
 
   font-weight: 500;
@@ -1764,16 +1753,33 @@
   text-wrap: balance;
 }
 
-.typing-cursor {
+.typed-word {
   display: inline-block;
+  white-space: nowrap;
+}
 
-  width: .075em;
-  height: .92em;
+.typed-char {
+  visibility: hidden;
+}
 
-  margin-left: .07em;
+.typed-char.visible {
+  visibility: visible;
+}
 
-  transform:
-    translateY(.08em);
+.typewriter {
+  position: relative;
+}
+
+.typing-cursor {
+  position: absolute;
+
+
+  width: .065em;
+  height: .9em;
+
+  margin: 0;
+
+  pointer-events: none;
 
   background:
     #79d9d3;
@@ -1799,6 +1805,11 @@
   100% {
     opacity: 0;
   }
+}
+
+.typing-cursor.finished {
+  opacity: 0;
+  animation: none;
 }
 
 .next-copy {
@@ -1984,8 +1995,7 @@
 
     grid-template-columns:
       145px
-      1fr
-      235px;
+      1fr;
 
     gap: 37px;
   }
@@ -2016,10 +2026,6 @@
     margin-top: 14px;
 
     font-size: 11px;
-  }
-
-  .timeline-side {
-    font-size: 9px;
   }
 
   .identity {
@@ -2131,17 +2137,17 @@
 
   .next {
     padding:
-      125px
+      100px
       0
-      140px;
+      112px;
   }
 
   .next-card {
-    min-height: 455px;
+    min-height: 360px;
 
     padding:
-      70px
-      55px;
+      48px
+      46px;
 
     border-radius: 29px;
   }
@@ -2163,17 +2169,17 @@
   }
 
   .typewriter-wrap {
-    min-height: 155px;
+    min-height: 100px;
   }
 
   .typewriter {
-    max-width: 800px;
+    max-width: 760px;
 
     font-size:
       clamp(
-        39px,
-        4.55vw,
-        62px
+        34px,
+        3.8vw,
+        50px
       );
   }
 
@@ -2248,12 +2254,6 @@
 
   .timeline-dot {
     left: 115px;
-  }
-
-  .timeline-side {
-    grid-column: 2;
-
-    padding-left: 22px;
   }
 
   .next-markers {
@@ -2422,18 +2422,6 @@
     font-size: 12px;
   }
 
-  .timeline-side {
-    margin-top: 21px;
-
-    padding:
-      17px
-      0
-      0;
-
-    border-top:
-      1px solid var(--line);
-  }
-
   .identity {
     padding:
       95px
@@ -2528,9 +2516,9 @@
 
   .next {
     padding:
-      110px
+      88px
       0
-      125px;
+      100px;
   }
 
   .next-technical-grid {
@@ -2546,11 +2534,11 @@
   }
 
   .next-card {
-    min-height: 500px;
+    min-height: 385px;
 
     padding:
-      65px
-      24px;
+      48px
+      22px;
 
     border-radius: 25px;
   }
@@ -2562,15 +2550,15 @@
   }
 
   .typewriter-wrap {
-    min-height: 190px;
+    min-height: 120px;
   }
 
   .typewriter {
     font-size:
       clamp(
-        37px,
-        10.6vw,
-        53px
+        32px,
+        9vw,
+        43px
       );
   }
 
