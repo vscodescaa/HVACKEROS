@@ -539,6 +539,70 @@
    MOBILE
    ========================================================= */
 
+/* =========================================================
+   LAPTOP HEADER
+   1051–1499 px: mismo lenguaje visual de desktop, pero con
+   menor ancho, separaciones y tipografía más compacta.
+   ========================================================= */
+
+@media (min-width: 1051px) and (max-width: 1499px) {
+
+  .header-wrap {
+    top: 18px;
+
+    width:
+      min(
+        calc(100% - 40px),
+        1180px
+      );
+  }
+
+  .header-wrap.is-scrolled {
+    top: 10px;
+  }
+
+  .header {
+    min-height: 61px;
+
+    padding:
+      0
+      10px
+      0
+      20px;
+  }
+
+  .brand-logo {
+    max-height: 34px;
+  }
+
+  .nav {
+    gap: 22px;
+  }
+
+  .nav a {
+    font-size: 9px;
+
+    letter-spacing: .08em;
+  }
+
+  .header-cta {
+    min-height: 43px;
+
+    padding:
+      0
+      17px;
+
+    gap: 9px;
+
+    font-size: 9px;
+  }
+
+  .header-cta svg {
+    width: 15px;
+  }
+
+}
+
 @media (max-width: 760px) {
 
   /* HEADER */
@@ -1410,63 +1474,6 @@ button.header-cta {
     800;
 }
 
-.nav a[aria-current="page"]::before {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: -14px;
-
-  width: 5px;
-  height: 5px;
-
-  border-radius: 50%;
-
-  background:
-    var(--teal);
-
-  box-shadow:
-    0 0 12px
-    rgba(21,155,154,.5);
-
-  transform:
-    translateX(-50%)
-    scale(.85);
-
-  animation:
-    navCurrentIn
-    .35s
-    var(--ease)
-    both;
-}
-
-.nav a[aria-current="page"]::after {
-  transform:
-    scaleX(1);
-
-  transform-origin:
-    center;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--navy),
-      var(--teal)
-    );
-}
-
-@keyframes navCurrentIn {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateX(-50%)
-      translateY(4px)
-      scale(.35);
-  }
-
   to {
     opacity: 1;
 
@@ -1513,12 +1520,5 @@ button.header-cta {
   color:
     var(--teal-dark);
 }
-
-@media (prefers-reduced-motion: reduce) {
-
-  .nav a[aria-current="page"]::before {
-    animation:
-      none;
-  }
 
 }
