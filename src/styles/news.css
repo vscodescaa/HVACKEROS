@@ -1138,6 +1138,250 @@ span::before {
 }
 
 /* =========================================================
+   LAPTOP
+   1051–1499 px: conserva la composición desktop de Actualidad,
+   pero reduce alturas, tipografía y densidad para laptops.
+   ========================================================= */
+
+@media (min-width: 1051px) and (max-width: 1499px) {
+
+  .updates-hero {
+    min-height:
+      480px;
+
+    padding:
+      118px
+      0
+      78px;
+  }
+
+  .hero-layout {
+    grid-template-columns:
+      minmax(0,1.25fr)
+      minmax(285px,.75fr);
+
+    gap:
+      64px;
+  }
+
+  .hero-index {
+    margin-bottom:
+      21px;
+  }
+
+  .updates-hero h1 {
+    max-width:
+      720px;
+
+    margin-top:
+      19px;
+
+    font-size:
+      clamp(
+        54px,
+        6vw,
+        78px
+      );
+  }
+
+  .hero-copy p {
+    max-width:
+      400px;
+
+    font-size:
+      13px;
+
+    line-height:
+      1.75;
+  }
+
+  .hero-copy-line {
+    margin-top:
+      24px;
+
+    padding-top:
+      16px;
+
+    font-size:
+      8px;
+  }
+
+  .updates-hero .hero-air {
+    width:
+      610px;
+
+    right:
+      -145px;
+
+    bottom:
+      -55px;
+  }
+
+  .filter-section {
+    margin-top:
+      -30px;
+  }
+
+  .filter-shell {
+    min-height:
+      62px;
+
+    padding:
+      7px
+      9px;
+  }
+
+  .filter-button {
+    min-height:
+      44px;
+
+    padding:
+      0
+      19px;
+
+    font-size:
+      9px;
+  }
+
+  .updates-content {
+    padding:
+      92px
+      0
+      115px;
+  }
+
+  .section-heading {
+    margin-bottom:
+      29px;
+  }
+
+  .section-heading h2 {
+    font-size:
+      clamp(
+        33px,
+        3.5vw,
+        47px
+      );
+  }
+
+  .featured {
+    min-height:
+      440px;
+
+    grid-template-columns:
+      1.05fr
+      .95fr;
+
+    border-radius:
+      28px;
+  }
+
+  .featured-media {
+    min-height:
+      440px;
+  }
+
+  .featured-content {
+    padding:
+      43px
+      42px
+      39px;
+  }
+
+  .featured-body {
+    margin-top:
+      42px;
+  }
+
+  .featured-body h3 {
+    font-size:
+      clamp(
+        34px,
+        3.5vw,
+        47px
+      );
+  }
+
+  .featured-body p {
+    margin-top:
+      18px;
+
+    font-size:
+      11px;
+  }
+
+  .featured-bottom {
+    margin-top:
+      38px;
+
+    padding-top:
+      20px;
+  }
+
+  .featured-date strong {
+    font-size:
+      29px;
+  }
+
+  .recent {
+    margin-top:
+      90px;
+  }
+
+  .recent-grid {
+    gap:
+      14px;
+  }
+
+  .content-card {
+    min-height:
+      430px;
+
+    border-radius:
+      23px;
+  }
+
+  .card-media {
+    height:
+      205px;
+  }
+
+  .card-content {
+    padding:
+      23px
+      22px
+      22px;
+  }
+
+  .card-content h3 {
+    margin-top:
+      16px;
+
+    font-size:
+      clamp(
+        22px,
+        1.85vw,
+        27px
+      );
+  }
+
+  .card-content p {
+    margin-top:
+      12px;
+
+    font-size:
+      10px;
+  }
+
+  .card-footer {
+    padding-top:
+      19px;
+  }
+
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
