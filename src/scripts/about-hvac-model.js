@@ -217,6 +217,10 @@ if (container) {
   machine.rotation.y =
     -.52;
 
+  machine.scale.setScalar(
+    .86
+  );
+
   scene.add(
     machine
   );
@@ -1261,12 +1265,27 @@ if (container) {
     camera.aspect =
       aspect;
 
+    const responsiveScale =
+      width <= 480
+        ? .66
+        : width <= 700
+          ? .72
+          : width <= 1050
+            ? .78
+            : width <= 1536
+              ? .82
+              : .86;
+
+    machine.scale.setScalar(
+      responsiveScale
+    );
+
     const baseDistance =
       aspect < .9
-        ? 10.4
+        ? 10.7
         : aspect < 1.2
-          ? 9.4
-          : 8.8;
+          ? 9.7
+          : 9.15;
 
     camera.position.set(
       6.25,
