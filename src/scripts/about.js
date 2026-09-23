@@ -1,3 +1,5 @@
+import "./about-hvac-model.js";
+
 /* =========================================================
    TYPEWRITER (específico de about.html)
    La frase completa ocupa su espacio desde el inicio; cada
