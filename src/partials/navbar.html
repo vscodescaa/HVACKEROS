@@ -18,12 +18,12 @@
         aria-label="Navegación principal"
       >
 
-        <a data-nav href="/about/">
-          Nosotros
-        </a>
-
         <a href="/#proposito">
           Qué hacemos
+        </a>
+
+        <a data-nav href="/about/">
+          Nosotros
         </a>
 
         <a data-nav href="/members/">
@@ -36,11 +36,14 @@
 
       </nav>
 
-      <a
-        href="/#unete"
+      <button
+        type="button"
         class="header-cta"
+        data-contact-open
+        aria-haspopup="dialog"
+        aria-controls="contactModal"
       >
-        Únete a HVACKEROS
+        Contáctanos
 
         <svg
           viewBox="0 0 24 24"
@@ -52,7 +55,7 @@
           <path d="M7 17L17 7"/>
           <path d="M8 7H17V16"/>
         </svg>
-      </a>
+      </button>
 
       <button
         class="menu-button"
@@ -89,13 +92,13 @@
 
     <nav>
 
-      <a data-nav href="/about/">
-        Nosotros
+      <a href="/#proposito">
+        Qué hacemos
         <small>01</small>
       </a>
 
-      <a href="/#proposito">
-        Qué hacemos
+      <a data-nav href="/about/">
+        Nosotros
         <small>02</small>
       </a>
 
@@ -109,11 +112,188 @@
         <small>04</small>
       </a>
 
-      <a href="/#unete">
-        Únete
+      <button
+        type="button"
+        class="mobile-contact-link"
+        data-contact-open
+        aria-haspopup="dialog"
+        aria-controls="contactModal"
+      >
+        Contáctanos
         <small>05</small>
-      </a>
+      </button>
 
     </nav>
+
+  </div>
+
+
+  <!-- =======================================================
+       CONTACT MODAL
+       Números temporales: reemplazar cuando se confirmen.
+       ======================================================= -->
+
+  <div
+    class="contact-modal"
+    id="contactModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="contactModalTitle"
+    aria-hidden="true"
+  >
+
+    <button
+      type="button"
+      class="contact-modal-backdrop"
+      data-contact-close
+      aria-label="Cerrar contacto"
+    ></button>
+
+    <div
+      class="contact-dialog"
+      role="document"
+    >
+
+      <div class="contact-brand-row">
+
+        <img
+          src="/src/assets/img/hvackeros-logotipo.png"
+          alt="HVACKEROS"
+          class="contact-logo"
+        >
+
+        <button
+          type="button"
+          class="contact-close"
+          data-contact-close
+          aria-label="Cerrar"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          >
+            <path d="M6 6L18 18"/>
+            <path d="M18 6L6 18"/>
+          </svg>
+        </button>
+
+      </div>
+
+      <div class="contact-dialog-top">
+
+        <span class="contact-kicker">
+          Contacto · Campus Monterrey
+        </span>
+
+        <h2 id="contactModalTitle">
+          Ponte en contacto con nosotros.
+        </h2>
+
+        <p>
+          Habla directamente con el equipo de HVACKEROS.
+          Por ahora estos números son temporales.
+        </p>
+
+      </div>
+
+      <div class="contact-grid">
+
+        <a
+          class="contact-person"
+          href="tel:+528100000000"
+        >
+          <span class="contact-avatar">
+            01
+          </span>
+
+          <span class="contact-person-copy">
+            <small>Presidencia</small>
+            <strong>+52 81 0000 0000</strong>
+            <span>Presidente de HVACKEROS</span>
+          </span>
+
+          <span class="contact-action">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            >
+              <path d="M7 17L17 7"/>
+              <path d="M8 7H17V16"/>
+            </svg>
+          </span>
+        </a>
+
+        <a
+          class="contact-person"
+          href="tel:+528100000001"
+        >
+          <span class="contact-avatar">
+            02
+          </span>
+
+          <span class="contact-person-copy">
+            <small>Vicepresidencia</small>
+            <strong>+52 81 0000 0001</strong>
+            <span>Vicepresidente de HVACKEROS</span>
+          </span>
+
+          <span class="contact-action">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            >
+              <path d="M7 17L17 7"/>
+              <path d="M8 7H17V16"/>
+            </svg>
+          </span>
+        </a>
+
+        <a
+          class="contact-person"
+          href="tel:+528100000002"
+        >
+          <span class="contact-avatar">
+            03
+          </span>
+
+          <span class="contact-person-copy">
+            <small>Finanzas</small>
+            <strong>+52 81 0000 0002</strong>
+            <span>Coordinación de finanzas</span>
+          </span>
+
+          <span class="contact-action">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            >
+              <path d="M7 17L17 7"/>
+              <path d="M8 7H17V16"/>
+            </svg>
+          </span>
+        </a>
+
+      </div>
+
+      <div class="contact-dialog-footer">
+        <span>
+          Ingeniería · Energía · Ambiente construido
+        </span>
+
+        <span>
+          HVACKEROS
+        </span>
+      </div>
+
+    </div>
 
   </div>

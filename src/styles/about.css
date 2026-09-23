@@ -566,8 +566,7 @@
 
   grid-template-columns:
     185px
-    1fr
-    300px;
+    1fr;
 
   align-items: start;
 
@@ -653,16 +652,6 @@
   font-size: 13px;
 
   line-height: 1.75;
-}
-
-.timeline-side {
-  padding-top: 4px;
-
-  color: var(--ink-muted);
-
-  font-size: 10px;
-
-  line-height: 1.7;
 }
 
 /* =========================================================
@@ -1200,9 +1189,9 @@
   z-index: 1;
 
   padding:
-    170px
+    125px
     0
-    190px;
+    140px;
 
   overflow: hidden;
 
@@ -1483,11 +1472,11 @@
   position: relative;
   z-index: 3;
 
-  min-height: 570px;
+  min-height: 410px;
 
   padding:
-    95px
-    70px;
+    58px
+    52px;
 
   display: flex;
   align-items: center;
@@ -1709,7 +1698,7 @@
 
   gap: 12px;
 
-  margin-bottom: 32px;
+  margin-bottom: 23px;
 
   color:
     rgba(255,255,255,.46);
@@ -1734,7 +1723,7 @@
 }
 
 .typewriter-wrap {
-  min-height: 210px;
+  min-height: 120px;
 
   display: flex;
   align-items: center;
@@ -1750,9 +1739,9 @@
 
   font-size:
     clamp(
-      44px,
-      5.5vw,
-      79px
+      38px,
+      4.35vw,
+      60px
     );
 
   font-weight: 500;
@@ -1764,16 +1753,33 @@
   text-wrap: balance;
 }
 
-.typing-cursor {
+.typed-word {
   display: inline-block;
+  white-space: nowrap;
+}
 
-  width: .075em;
-  height: .92em;
+.typed-char {
+  visibility: hidden;
+}
 
-  margin-left: .07em;
+.typed-char.visible {
+  visibility: visible;
+}
 
-  transform:
-    translateY(.08em);
+.typewriter {
+  position: relative;
+}
+
+.typing-cursor {
+  position: absolute;
+
+
+  width: .065em;
+  height: .9em;
+
+  margin: 0;
+
+  pointer-events: none;
 
   background:
     #79d9d3;
@@ -1799,6 +1805,11 @@
   100% {
     opacity: 0;
   }
+}
+
+.typing-cursor.finished {
+  opacity: 0;
+  animation: none;
 }
 
 .next-copy {
@@ -1832,6 +1843,369 @@
   transform:
     translateY(0);
 }
+
+/* =========================================================
+   LAPTOP
+   1051–1536 px: mantiene la composición desktop de About,
+   pero reduce escalas y altura vertical para laptops.
+   ========================================================= */
+
+@media (min-width: 1051px) and (max-width: 1536px) {
+
+  .history-hero {
+    min-height: 720px;
+
+    background-position:
+      center center;
+  }
+
+  .history-hero-inner {
+    padding:
+      125px
+      0
+      95px;
+  }
+
+  .history-number {
+    margin-bottom: 23px;
+  }
+
+  .history-hero h1 {
+    max-width: 920px;
+
+    margin-top: 22px;
+
+    font-size:
+      clamp(
+        58px,
+        6.3vw,
+        88px
+      );
+  }
+
+  .hero-bottom {
+    max-width: 690px;
+
+    margin-top: 38px;
+  }
+
+  .hero-intro {
+    font-size:
+      clamp(
+        14px,
+        1.15vw,
+        17px
+      );
+  }
+
+  .hero-note {
+    max-width: 470px;
+
+    margin-top: 23px;
+    padding-top: 18px;
+  }
+
+  .history-hero .hero-air {
+    width: 1080px;
+  }
+
+  .hero-tech {
+    right: 28px;
+    bottom: 27px;
+  }
+
+  .origin {
+    padding:
+      115px
+      0;
+  }
+
+  .origin-grid {
+    grid-template-columns:
+      .48fr
+      1.52fr;
+
+    gap: 65px;
+  }
+
+  .origin-copy {
+    max-width: 850px;
+  }
+
+  .origin-copy h2 {
+    font-size:
+      clamp(
+        38px,
+        4.2vw,
+        59px
+      );
+  }
+
+  .origin-copy p {
+    max-width: 590px;
+
+    margin-top: 27px;
+
+    font-size: 12px;
+  }
+
+  .timeline {
+    padding:
+      115px
+      0;
+  }
+
+  .timeline-header {
+    gap: 50px;
+  }
+
+  .timeline-header h2 {
+    max-width: 710px;
+
+    margin-top: 18px;
+
+    font-size:
+      clamp(
+        41px,
+        4.45vw,
+        63px
+      );
+  }
+
+  .timeline-header p {
+    max-width: 470px;
+
+    font-size: 12px;
+  }
+
+  .timeline-list {
+    margin-top: 72px;
+  }
+
+  .timeline-list::before {
+    left: 145px;
+  }
+
+  .timeline-item {
+    min-height: 220px;
+
+    padding:
+      34px
+      0;
+
+    grid-template-columns:
+      145px
+      1fr;
+
+    gap: 37px;
+  }
+
+  .timeline-dot {
+    left: 140px;
+    top: 40px;
+  }
+
+  .timeline-main {
+    padding-left: 18px;
+  }
+
+  .timeline-main h3 {
+    max-width: 570px;
+
+    font-size:
+      clamp(
+        27px,
+        2.5vw,
+        36px
+      );
+  }
+
+  .timeline-main p {
+    max-width: 540px;
+
+    margin-top: 14px;
+
+    font-size: 11px;
+  }
+
+  .identity {
+    padding:
+      108px
+      0;
+  }
+
+  .identity-grid {
+    grid-template-columns:
+      .88fr
+      1.12fr;
+
+    gap: 68px;
+  }
+
+  .identity-mark {
+    min-height: 425px;
+
+    border-radius: 26px;
+  }
+
+  .identity-copy h2 {
+    max-width: 600px;
+
+    margin-top: 19px;
+
+    font-size:
+      clamp(
+        38px,
+        4vw,
+        55px
+      );
+  }
+
+  .identity-copy > p {
+    max-width: 540px;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+  }
+
+  .identity-points {
+    margin-top: 38px;
+
+    gap:
+      25px
+      31px;
+  }
+
+  .identity-point strong {
+    font-size: 16px;
+  }
+
+  .today-wrapper {
+    margin-top: -42px;
+    margin-bottom: -42px;
+  }
+
+  .today {
+    padding:
+      145px
+      0;
+  }
+
+  .today-grid {
+    grid-template-columns:
+      .48fr
+      1.52fr;
+
+    gap: 65px;
+  }
+
+  .today-copy h2 {
+    max-width: 790px;
+
+    font-size:
+      clamp(
+        39px,
+        4.35vw,
+        60px
+      );
+  }
+
+  .today-copy p {
+    max-width: 570px;
+
+    margin-top: 24px;
+
+    font-size: 12px;
+  }
+
+  .today-line {
+    margin-top: 50px;
+
+    padding-top: 22px;
+
+    gap: 23px;
+  }
+
+  .today-line strong {
+    font-size: 16px;
+  }
+
+  .today-air {
+    width: 720px;
+  }
+
+  .next {
+    padding:
+      100px
+      0
+      112px;
+  }
+
+  .next-card {
+    min-height: 360px;
+
+    padding:
+      48px
+      46px;
+
+    border-radius: 29px;
+  }
+
+  .next-card::before {
+    inset: 15px;
+
+    border-radius: 19px;
+  }
+
+  .next-content {
+    max-width: 880px;
+  }
+
+  .next-eyebrow {
+    margin-bottom: 24px;
+
+    font-size: 8px;
+  }
+
+  .typewriter-wrap {
+    min-height: 100px;
+  }
+
+  .typewriter {
+    max-width: 760px;
+
+    font-size:
+      clamp(
+        34px,
+        3.8vw,
+        50px
+      );
+  }
+
+  .next-copy {
+    max-width: 530px;
+
+    margin-top: 24px;
+
+    font-size: 11px;
+  }
+
+  .next-orbit {
+    width: 340px;
+    height: 340px;
+  }
+
+  .next-air {
+    width: 1300px;
+  }
+
+  .next-air-fine {
+    width: 1350px;
+  }
+
+}
+
 
 /* =========================================================
    TABLET
@@ -1880,12 +2254,6 @@
 
   .timeline-dot {
     left: 115px;
-  }
-
-  .timeline-side {
-    grid-column: 2;
-
-    padding-left: 22px;
   }
 
   .next-markers {
@@ -2054,18 +2422,6 @@
     font-size: 12px;
   }
 
-  .timeline-side {
-    margin-top: 21px;
-
-    padding:
-      17px
-      0
-      0;
-
-    border-top:
-      1px solid var(--line);
-  }
-
   .identity {
     padding:
       95px
@@ -2160,9 +2516,9 @@
 
   .next {
     padding:
-      110px
+      88px
       0
-      125px;
+      100px;
   }
 
   .next-technical-grid {
@@ -2178,11 +2534,11 @@
   }
 
   .next-card {
-    min-height: 500px;
+    min-height: 385px;
 
     padding:
-      65px
-      24px;
+      48px
+      22px;
 
     border-radius: 25px;
   }
@@ -2194,15 +2550,15 @@
   }
 
   .typewriter-wrap {
-    min-height: 190px;
+    min-height: 120px;
   }
 
   .typewriter {
     font-size:
       clamp(
-        37px,
-        10.6vw,
-        53px
+        32px,
+        9vw,
+        43px
       );
   }
 
@@ -2218,4 +2574,404 @@
     width: 120px;
     height: 120px;
   }
+}
+
+
+/* =========================================================
+   FINAL SECTION REFINEMENT
+   Más contenido editorial sin convertir la sección en otra
+   tarjeta fotográfica.
+   ========================================================= */
+
+.next-card {
+  min-height: 520px;
+
+  padding:
+    68px
+    58px
+    52px;
+}
+
+.next-content {
+  max-width: 1100px;
+}
+
+.next-copy {
+  max-width: 630px;
+}
+
+.next-corner {
+  color:
+    rgba(255,255,255,.29);
+
+  letter-spacing: .2em;
+}
+
+.next-corner.left::before,
+.next-corner.right::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 5px;
+  height: 5px;
+
+  margin-right: 9px;
+
+  border-radius: 50%;
+
+  background: #79d9d3;
+
+  box-shadow:
+    0 0 12px
+    rgba(121,217,211,.45);
+
+  vertical-align: 1px;
+}
+
+.next-pillars {
+  position: relative;
+  z-index: 4;
+
+  max-width: 940px;
+
+  margin:
+    43px
+    auto
+    0;
+
+  padding-top: 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 0;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.12);
+}
+
+.next-pillar {
+  min-height: 82px;
+
+  padding:
+    0
+    27px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  gap: 16px;
+
+  text-align: left;
+}
+
+.next-pillar + .next-pillar {
+  border-left:
+    1px solid
+    rgba(255,255,255,.09);
+}
+
+.next-pillar > span {
+  padding-top: 3px;
+
+  color:
+    rgba(121,217,211,.58);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+}
+
+.next-pillar small {
+  display: block;
+
+  color:
+    rgba(255,255,255,.34);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
+}
+
+.next-pillar strong {
+  display: block;
+
+  max-width: 230px;
+
+  margin-top: 9px;
+
+  color:
+    rgba(255,255,255,.78);
+
+  font-family:
+    "Open Sans",
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  letter-spacing: -.015em;
+}
+
+.next-markers {
+  opacity: .48;
+}
+
+.next-marker::before {
+  width: 40px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--teal),
+      rgba(18,63,106,.35)
+    );
+}
+
+@media (min-width: 1051px) and (max-width: 1536px) {
+
+  .next-card {
+    min-height: 450px;
+
+    padding:
+      55px
+      48px
+      43px;
+  }
+
+  .next-pillars {
+    margin-top: 34px;
+
+    padding-top: 20px;
+  }
+
+  .next-pillar {
+    min-height: 70px;
+
+    padding:
+      0
+      21px;
+  }
+
+  .next-pillar strong {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .next-card {
+    min-height: 0;
+
+    padding:
+      48px
+      22px
+      31px;
+  }
+
+  .next-pillars {
+    margin-top: 34px;
+
+    padding-top: 0;
+
+    grid-template-columns: 1fr;
+
+    border-top: 0;
+  }
+
+  .next-pillar {
+    min-height: 0;
+
+    padding:
+      18px
+      0;
+
+    grid-template-columns:
+      32px 1fr;
+
+    border-top:
+      1px solid
+      rgba(255,255,255,.10);
+  }
+
+  .next-pillar + .next-pillar {
+    border-left: 0;
+  }
+
+  .next-pillar strong {
+    max-width: none;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   IDENTITY — INTERACTIVE HVAC 3D
+   El modelo no tiene panel ni fondo propio: vive directamente
+   sobre el fondo real de la sección.
+   ========================================================= */
+
+.identity-hvac-wrap {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: visible;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+.identity-hvac-wrap::before {
+  display: none;
+}
+
+.identity-hvac-scene {
+  position: absolute;
+
+  inset: -5% -8%;
+
+  background: transparent;
+
+  cursor: grab;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  touch-action: pan-y;
+}
+
+.identity-hvac-scene:active {
+  cursor: grabbing;
+}
+
+.identity-hvac-scene canvas {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+}
+
+.identity-hvac-hint {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  z-index: 3;
+
+  transform: translateX(-50%);
+
+  color:
+    rgba(18,63,106,.42);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: .17em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.identity-hvac-hint::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 20px;
+  height: 1px;
+
+  margin-right: 9px;
+
+  background:
+    rgba(21,155,154,.46);
+
+  vertical-align: middle;
+}
+
+@media (min-width: 1051px) and (max-width: 1536px) {
+
+  .identity-hvac-wrap {
+    min-height: 430px;
+  }
+
+  .identity-hvac-scene {
+    inset: -7% -10%;
+  }
+
+  .identity-hvac-hint {
+    bottom: 3px;
+  }
+
+}
+
+@media (max-width: 1050px) {
+
+  .identity-hvac-wrap {
+    width: min(100%, 650px);
+
+    min-height: 470px;
+
+    margin-inline: auto;
+  }
+
+  .identity-hvac-scene {
+    inset: -4% -5%;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .identity-hvac-wrap {
+    min-height: 350px;
+  }
+
+  .identity-hvac-scene {
+    inset: -3% -12%;
+  }
+
+  .identity-hvac-hint {
+    bottom: -2px;
+
+    font-size: 6px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .identity-hvac-wrap {
+    min-height: 310px;
+  }
+
+  .identity-hvac-scene {
+    inset: -4% -16%;
+  }
+
 }

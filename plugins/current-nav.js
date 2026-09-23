@@ -19,7 +19,17 @@ export function currentNav() {
 
         return html.replace(NAV_LINK, (tag, attributes) => {
           const href = HREF.exec(attributes)?.[1];
-          return href === url ? `<a${attributes} aria-current="page">` : tag;
+
+          const isCurrentPage =
+            href === url ||
+            (
+              url === "/" &&
+              href === "/#proposito"
+            );
+
+          return isCurrentPage
+            ? `<a${attributes} aria-current="page">`
+            : tag;
         });
       },
     },

@@ -1,13 +1,29 @@
+import "./about-hvac-model.js";
+
 /* =========================================================
    TYPEWRITER (específico de about.html)
+   La frase completa ocupa su espacio desde el inicio; cada
+   carácter empieza invisible y se revela sin recalcular el
+   salto de línea. Evita el cambio brusco de línea durante
+   la animación.
    ========================================================= */
 
 const sentence =
-  "Nuestra historia todavía se está escribiendo.";
+  "Nuestra historia aún se escribe.";
 
 const typedText =
   document.getElementById(
     "typedText"
+  );
+
+const typingCursor =
+  document.getElementById(
+    "typingCursor"
+  );
+
+const typewriter =
+  document.getElementById(
+    "typewriter"
   );
 
 const nextCard =
@@ -22,6 +38,136 @@ const nextCopy =
 
 let hasTyped =
   false;
+
+const characterSpans = [];
+
+function buildSentence() {
+
+  const words =
+    sentence.split(" ");
+
+  words.forEach(
+    (word, wordIndex) => {
+
+      const wordSpan =
+        document.createElement(
+          "span"
+        );
+
+      wordSpan.className =
+        "typed-word";
+
+      Array.from(word)
+        .forEach((character) => {
+
+          const characterSpan =
+            document.createElement(
+              "span"
+            );
+
+          characterSpan.className =
+            "typed-char";
+
+          characterSpan.textContent =
+            character;
+
+          wordSpan.appendChild(
+            characterSpan
+          );
+
+          characterSpans.push(
+            characterSpan
+          );
+
+        });
+
+      typedText.appendChild(
+        wordSpan
+      );
+
+      if (
+        wordIndex <
+        words.length - 1
+      ) {
+
+        typedText.appendChild(
+          document.createTextNode(
+            " "
+          )
+        );
+
+      }
+
+    });
+
+}
+
+function moveCursor(
+  character = null
+) {
+
+  if (
+    !typingCursor ||
+    !typewriter
+  ) {
+    return;
+  }
+
+  const typewriterRect =
+    typewriter.getBoundingClientRect();
+
+  if (!character) {
+
+    typingCursor.style.left =
+      "0px";
+
+    typingCursor.style.top =
+      "0.08em";
+
+    return;
+
+  }
+
+  const characterRect =
+    character
+      .getBoundingClientRect();
+
+  typingCursor.style.left =
+    `${
+      characterRect.right -
+      typewriterRect.left +
+      4
+    }px`;
+
+  typingCursor.style.top =
+    `${
+      characterRect.top -
+      typewriterRect.top +
+      characterRect.height * .08
+    }px`;
+
+}
+
+function revealAll() {
+
+  characterSpans.forEach(
+    (character) => {
+
+      character.classList.add(
+        "visible"
+      );
+
+    });
+
+  typingCursor
+    ?.classList
+    .add("finished");
+
+  nextCopy.classList.add(
+    "visible"
+  );
+
+}
 
 function startTyping() {
 
@@ -39,12 +185,7 @@ function startTyping() {
 
   if (reducedMotion) {
 
-    typedText.textContent =
-      sentence;
-
-    nextCopy.classList.add(
-      "visible"
-    );
+    revealAll();
 
     return;
 
@@ -52,12 +193,16 @@ function startTyping() {
 
   let index = 0;
 
-  function typeCharacter() {
+  function revealCharacter() {
 
     if (
       index >=
-      sentence.length
+      characterSpans.length
     ) {
+
+      typingCursor
+        ?.classList
+        .add("finished");
 
       setTimeout(
         () => {
@@ -67,7 +212,7 @@ function startTyping() {
             .add("visible");
 
         },
-        450
+        300
       );
 
       return;
@@ -75,42 +220,41 @@ function startTyping() {
     }
 
     const character =
-      sentence.charAt(index);
+      characterSpans[index];
 
-    typedText.textContent +=
-      character;
+    character.classList.add(
+      "visible"
+    );
+
+    moveCursor(
+      character
+    );
 
     index++;
 
-    let delay =
-      48 +
-      Math.random() * 32;
-
-    if (
-      character === " "
-    ) {
-      delay = 35;
-    }
-
-    if (
-      character === "."
-    ) {
-      delay = 170;
-    }
+    const isPunctuation =
+      /[.,;:!?]/.test(
+        character.textContent
+      );
 
     setTimeout(
-      typeCharacter,
-      delay
+      revealCharacter,
+      isPunctuation
+        ? 105
+        : 44
     );
 
   }
 
   setTimeout(
-    typeCharacter,
-    450
+    revealCharacter,
+    260
   );
 
 }
+
+buildSentence();
+moveCursor();
 
 const typeObserver =
   new IntersectionObserver(
@@ -136,11 +280,41 @@ const typeObserver =
     },
 
     {
-      threshold: .4
+      threshold: .35
     }
 
   );
 
 typeObserver.observe(
   nextCard
+);
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    const lastVisible =
+      [...characterSpans]
+        .reverse()
+        .find(
+          (character) =>
+            character
+              .classList
+              .contains("visible")
+        );
+
+    if (
+      lastVisible &&
+      !typingCursor
+        ?.classList
+        .contains("finished")
+    ) {
+
+      moveCursor(
+        lastVisible
+      );
+
+    }
+
+  }
 );
