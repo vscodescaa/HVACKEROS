@@ -2575,3 +2575,246 @@
     height: 120px;
   }
 }
+
+
+/* =========================================================
+   FINAL SECTION REFINEMENT
+   Más contenido editorial sin convertir la sección en otra
+   tarjeta fotográfica.
+   ========================================================= */
+
+.next-card {
+  min-height: 520px;
+
+  padding:
+    68px
+    58px
+    52px;
+}
+
+.next-content {
+  max-width: 1100px;
+}
+
+.next-copy {
+  max-width: 630px;
+}
+
+.next-corner {
+  color:
+    rgba(255,255,255,.29);
+
+  letter-spacing: .2em;
+}
+
+.next-corner.left::before,
+.next-corner.right::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 5px;
+  height: 5px;
+
+  margin-right: 9px;
+
+  border-radius: 50%;
+
+  background: #79d9d3;
+
+  box-shadow:
+    0 0 12px
+    rgba(121,217,211,.45);
+
+  vertical-align: 1px;
+}
+
+.next-pillars {
+  position: relative;
+  z-index: 4;
+
+  max-width: 940px;
+
+  margin:
+    43px
+    auto
+    0;
+
+  padding-top: 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 0;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.12);
+}
+
+.next-pillar {
+  min-height: 82px;
+
+  padding:
+    0
+    27px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  gap: 16px;
+
+  text-align: left;
+}
+
+.next-pillar + .next-pillar {
+  border-left:
+    1px solid
+    rgba(255,255,255,.09);
+}
+
+.next-pillar > span {
+  padding-top: 3px;
+
+  color:
+    rgba(121,217,211,.58);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .14em;
+}
+
+.next-pillar small {
+  display: block;
+
+  color:
+    rgba(255,255,255,.34);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
+}
+
+.next-pillar strong {
+  display: block;
+
+  max-width: 230px;
+
+  margin-top: 9px;
+
+  color:
+    rgba(255,255,255,.78);
+
+  font-family:
+    "Open Sans",
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  letter-spacing: -.015em;
+}
+
+.next-markers {
+  opacity: .48;
+}
+
+.next-marker::before {
+  width: 40px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--teal),
+      rgba(18,63,106,.35)
+    );
+}
+
+@media (min-width: 1051px) and (max-width: 1536px) {
+
+  .next-card {
+    min-height: 450px;
+
+    padding:
+      55px
+      48px
+      43px;
+  }
+
+  .next-pillars {
+    margin-top: 34px;
+
+    padding-top: 20px;
+  }
+
+  .next-pillar {
+    min-height: 70px;
+
+    padding:
+      0
+      21px;
+  }
+
+  .next-pillar strong {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .next-card {
+    min-height: 0;
+
+    padding:
+      48px
+      22px
+      31px;
+  }
+
+  .next-pillars {
+    margin-top: 34px;
+
+    padding-top: 0;
+
+    grid-template-columns: 1fr;
+
+    border-top: 0;
+  }
+
+  .next-pillar {
+    min-height: 0;
+
+    padding:
+      18px
+      0;
+
+    grid-template-columns:
+      32px 1fr;
+
+    border-top:
+      1px solid
+      rgba(255,255,255,.10);
+  }
+
+  .next-pillar + .next-pillar {
+    border-left: 0;
+  }
+
+  .next-pillar strong {
+    max-width: none;
+
+    font-size: 13px;
+  }
+
+}
