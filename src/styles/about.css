@@ -2818,3 +2818,160 @@
   }
 
 }
+
+
+/* =========================================================
+   IDENTITY — INTERACTIVE HVAC 3D
+   El modelo no tiene panel ni fondo propio: vive directamente
+   sobre el fondo real de la sección.
+   ========================================================= */
+
+.identity-hvac-wrap {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: visible;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+.identity-hvac-wrap::before {
+  display: none;
+}
+
+.identity-hvac-scene {
+  position: absolute;
+
+  inset: -5% -8%;
+
+  background: transparent;
+
+  cursor: grab;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+
+  touch-action: pan-y;
+}
+
+.identity-hvac-scene:active {
+  cursor: grabbing;
+}
+
+.identity-hvac-scene canvas {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+}
+
+.identity-hvac-hint {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  z-index: 3;
+
+  transform: translateX(-50%);
+
+  color:
+    rgba(18,63,106,.42);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: .17em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.identity-hvac-hint::before {
+  content: "";
+
+  display: inline-block;
+
+  width: 20px;
+  height: 1px;
+
+  margin-right: 9px;
+
+  background:
+    rgba(21,155,154,.46);
+
+  vertical-align: middle;
+}
+
+@media (min-width: 1051px) and (max-width: 1536px) {
+
+  .identity-hvac-wrap {
+    min-height: 430px;
+  }
+
+  .identity-hvac-scene {
+    inset: -7% -10%;
+  }
+
+  .identity-hvac-hint {
+    bottom: 3px;
+  }
+
+}
+
+@media (max-width: 1050px) {
+
+  .identity-hvac-wrap {
+    width: min(100%, 650px);
+
+    min-height: 470px;
+
+    margin-inline: auto;
+  }
+
+  .identity-hvac-scene {
+    inset: -4% -5%;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .identity-hvac-wrap {
+    min-height: 350px;
+  }
+
+  .identity-hvac-scene {
+    inset: -3% -12%;
+  }
+
+  .identity-hvac-hint {
+    bottom: -2px;
+
+    font-size: 6px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .identity-hvac-wrap {
+    min-height: 310px;
+  }
+
+  .identity-hvac-scene {
+    inset: -4% -16%;
+  }
+
+}
